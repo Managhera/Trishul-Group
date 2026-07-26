@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>TRISHUL Manufacturing</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Trishul Manufacturing delivers high-performance industrial solutions, precast cement products, rice flakes, solar heaters, and vault security systems."/>
+    <meta name="keywords" content="Trishul Group, Manufacturing, Cement Products, Rice Poha Flakes, Solar Water Heater, Doors and Safes"/>
+    <!-- Security Header -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; font-src 'self' https: data:;">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP + ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="./icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
+    <link rel="manifest" href="./icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#059669", // Premium Emerald Green
+                        "primary-container": "#047857",
+                        "silver": {
+                            DEFAULT: "#cbd5e1",
+                            light: "#f1f5f9",
+                            dark: "#64748b"
+                        },
+                        "surface": "#ffffff",
+                        "surface-variant": "#f8fafc",
+                        "on-surface": "#0f172a", // Deep Slate
+                        "outline": "#94a3b8",
+                        "background": "#ffffff",
+                        "surface-container": "#f1f5f9",
+                    },
+                    "fontFamily": {
+                        "sans": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            will-change: transform, opacity;
+        }
+
+        /* Premium Glass Effects with Enhanced Saturation & Blur */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(40px) saturate(150%);
+            -webkit-backdrop-filter: blur(40px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .white-precision-glass {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.7));
+            backdrop-filter: blur(48px) saturate(120%);
+            -webkit-backdrop-filter: blur(48px) saturate(120%);
+            border: 1px solid rgba(203, 213, 225, 0.4);
+            box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        .white-precision-glass:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -15px rgba(5, 150, 105, 0.12);
+            border-color: rgba(5, 150, 105, 0.3);
+        }
+
+        .extreme-glass {
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.95), rgba(241,245,249,0.5));
+            backdrop-filter: blur(40px) saturate(140%);
+            -webkit-backdrop-filter: blur(40px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 45px -15px rgba(15, 23, 42, 0.06);
+            transition: all 0.5s ease;
+        }
+
+        .industrial-card {
+            background: #ffffff;
+            border: 1px solid rgba(203, 213, 225, 0.5);
+            will-change: transform;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .industrial-card:hover {
+            border-color: #059669;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(5, 150, 105, 0.2);
+        }
+
+        /* Refined Premium Gradient */
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(5, 150, 105, 0.08) 0%, rgba(100, 116, 139, 0.04) 40%, rgba(255, 255, 255, 1) 100%);
+        }
+
+        .floating-action {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .magnetic-btn {
+            will-change: transform;
+        }
+
+        .hero-word-wrap {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+        }
+        .hero-word {
+            display: inline-block;
+            transform: translateY(110%);
+        }
+
+        .blueprint-grid {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .blueprint-grid path,
+        .blueprint-grid line,
+        .blueprint-grid circle {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+
+        .stat-tick {
+            transform-origin: left center;
+        }
+
+        [data-tilt] {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Icon Float Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .icon-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Interactive Gallery Enhancements */
+        .gallery-card {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(5, 150, 105, 0.25);
+        }
+
+        /* Desktop Dropdown Styles */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary/20">
+
+<!-- BEGIN: Navigation (Modern Floating Pill) -->
+<div class="fixed top-4 inset-x-0 mx-auto w-[92%] sm:w-[85%] max-w-5xl z-50">
+    <nav class="bg-white/80 backdrop-blur-2xl border border-white/60 shadow-2xl shadow-slate-300/40 rounded-full transition-all duration-500 ease-out" id="main-nav">
+        <div class="px-5 sm:px-8 h-14 sm:h-16 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3 relative z-[60]" data-purpose="brand-logo" id="nav-logo">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-primary to-primary-container rounded-lg flex items-center justify-center rotate-45 shadow-lg shadow-primary/30" id="nav-logo-mark">
+                    <span class="text-white text-sm sm:text-base font-extrabold -rotate-45">T</span>
+                </div>
+                <span class="text-lg sm:text-xl font-extrabold tracking-tight text-on-surface">TRISHUL Group</span>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600" id="nav-links">
+                <a class="hover:text-primary transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="#">Solutions</a>
+                
+                <!-- Services Dropdown (Desktop) -->
+                <div class="relative group py-2">
+                    <button class="flex items-center hover:text-primary transition-colors focus:outline-none">
+                        Services <span class="material-symbols-outlined text-sm ml-1 transition-transform group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div class="dropdown-menu absolute top-full left-0 w-56 bg-white/95 backdrop-blur-2xl border border-silver/50 rounded-2xl shadow-2xl py-3 px-2 flex flex-col space-y-1">
+                        <a href="./Routs/CementProducts/id.html" target="_blank" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm text-primary">foundation</span>
+                            <span>Cement products</span>
+                        </a>
+                        <a href="./Routs/RiceProducts/index.html" target="_blank" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm text-primary">restaurant</span>
+                            <span>Rice flakes product</span>
+                        </a>
+                        <a href="./Routs/Door&SafeProducts/index.html" target="_blank" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm text-primary">security</span>
+                            <span>Doors and safes</span>
+                        </a>
+                        <a href="./Routs/SolarProducts/index.html" target="_blank" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-primary/10 hover:text-primary transition-colors flex items-center space-x-2">
+                            <span class="material-symbols-outlined text-sm text-primary">solar_power</span>
+                            <span>Solar products</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a class="hover:text-primary transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="#image-gallery">Gallery</a>
+                <a class="hover:text-primary transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="#contact">Contact</a>
+            </div>
+
+            <!-- Desktop CTA -->
+            <div id="nav-cta" class="hidden md:block">
+                <button class="bg-on-surface text-white px-7 py-2.5 rounded-full text-sm font-bold hover:bg-primary transition-colors shadow-lg shadow-slate-900/20 border border-transparent hover:scale-105 active:scale-95 magnetic-btn">
+                    Get a Quote
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none relative z-[60]" aria-label="Toggle Menu">
+                <span class="w-5 h-[2px] bg-slate-800 block rounded-full transition-all duration-300"></span>
+                <span class="w-5 h-[2px] bg-slate-800 block rounded-full transition-all duration-300"></span>
+                <span class="w-5 h-[2px] bg-slate-800 block rounded-full transition-all duration-300"></span>
+            </button>
+        </div>
+    </nav>
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-surface-variant/95 backdrop-blur-3xl z-[55] flex flex-col items-center justify-start hidden opacity-0 translate-x-full overflow-y-auto px-6 py-24">
+    <!-- Explicit Mobile Close Button -->
+    <button id="mobile-close-btn" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center bg-white rounded-full text-slate-800 hover:text-primary hover:scale-110 transition-all shadow-lg border border-silver-light">
+        <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+
+    <div class="flex flex-col space-y-6 text-center w-full max-w-sm" id="mobile-nav-links">
+        <a href="#" class="text-2xl font-extrabold text-slate-800 hover:text-primary transition-colors mobile-link">Solutions</a>
+        
+        <!-- Mobile Services Submenu -->
+        <div class="flex flex-col space-y-2 bg-white/80 p-4 rounded-2xl border border-silver/50 text-left">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary mb-1 text-center">Services Divisions</span>
+            <a href="../CementProducts/id.html" target="_blank" class="text-base font-bold text-slate-800 hover:text-primary mobile-link py-1 px-3 rounded-lg hover:bg-primary/5 transition-colors">cementproducts</a>
+            <a href="../RiceProducts/index.html" class="text-base font-bold text-slate-800 hover:text-primary mobile-link py-1 px-3 rounded-lg hover:bg-primary/5 transition-colors">riceflakesproduct</a>
+            <a href="../Door&SafeProducts/index.html" class="text-base font-bold text-slate-800 hover:text-primary mobile-link py-1 px-3 rounded-lg hover:bg-primary/5 transition-colors">doorsandsafes</a>
+            <a href="../SolarProducts/index.html" class="text-base font-bold text-slate-800 hover:text-primary mobile-link py-1 px-3 rounded-lg hover:bg-primary/5 transition-colors">solarproducts</a>
+        </div>
+
+        <a href="#image-gallery" class="text-2xl font-extrabold text-slate-800 hover:text-primary transition-colors mobile-link">Gallery</a>
+        <a href="#contact" class="text-2xl font-extrabold text-slate-800 hover:text-primary transition-colors mobile-link">Contact</a>
+        <button class="mt-2 bg-primary text-white w-full py-4 rounded-full text-lg font-bold shadow-xl shadow-primary/30 mobile-link active:scale-95 transition-transform">
+            Get a Quote
+        </button>
+    </div>
+</div>
+<!-- END: Navigation -->
+
+<!-- BEGIN: Hero Section (Perfect 100svh Fill) -->
+<main class="relative min-h-[100svh] flex flex-col items-center justify-center pt-24 pb-12 overflow-hidden hero-gradient">
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-50 mix-blend-multiply" id="threejs-container-ANIMATION_TRISHUL_CORE"></div>
+
+    <svg class="blueprint-grid opacity-0" id="blueprint-svg" preserveAspectRatio="none" viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#cbd5e1" stroke-width="1.5" fill="none" opacity="0.5">
+            <line x1="0" y1="120" x2="1440" y2="120"></line>
+            <line x1="0" y1="580" x2="1440" y2="580"></line>
+            <line x1="240" y1="0" x2="240" y2="700"></line>
+            <line x1="1200" y1="0" x2="1200" y2="700"></line>
+            <circle cx="720" cy="350" r="180" stroke="#059669"></circle>
+            <circle cx="720" cy="350" r="120"></circle>
+            <path d="M 300 350 L 1140 350"></path>
+            <path d="M 720 170 L 720 530"></path>
+        </g>
+    </svg>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center">
+        <span class="inline-block px-5 py-2 mb-6 sm:mb-8 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary/10 border border-primary/20 rounded-full opacity-0 backdrop-blur-md" id="hero-badge">
+            25+ Years of Industrial Excellence
+        </span>
+        <h1 class="text-4xl sm:text-7xl md:text-8xl font-extrabold tracking-tight mb-6 sm:mb-8 text-on-surface leading-[1.05]" id="hero-headline">
+            <span class="hero-word-wrap"><span class="hero-word">Engineering</span></span> <span class="hero-word-wrap"><span class="hero-word">Precision</span></span><br class="hidden sm:block"/> <span class="hero-word-wrap"><span class="hero-word">for</span></span> <span class="hero-word-wrap"><span class="hero-word">a</span></span> <span class="hero-word-wrap"><span class="hero-word text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400 drop-shadow-sm">Sustainable</span></span> <span class="hero-word-wrap"><span class="hero-word">Future</span></span>
+        </h1>
+        <p class="max-w-2xl mx-auto text-sm sm:text-lg md:text-xl text-slate-500 mb-8 sm:mb-12 leading-relaxed opacity-0 font-medium px-4" id="hero-sub">
+            Delivering high-performance manufacturing solutions across global industries with unmatched technical expertise and precision.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 w-full sm:w-auto opacity-0 px-4" id="hero-ctas">
+            <button class="w-full sm:w-auto bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-primary-container hover:shadow-2xl hover:shadow-primary/40 transition-all magnetic-btn text-sm sm:text-base border border-transparent">
+                View Catalog
+            </button>
+            <button class="w-full sm:w-auto bg-white/85 backdrop-blur-md text-on-surface border border-silver-light px-10 py-4 rounded-full font-bold hover:bg-white hover:border-silver transition-all magnetic-btn shadow-lg text-sm sm:text-base">
+                Talk to an Expert
+            </button>
+        </div>
+    </div>
+</main>
+<!-- END: Hero Section -->
+
+<!-- BEGIN: Stats Section (Hidden on mobile) -->
+<section class="py-16 sm:py-24 bg-gradient-to-b from-white to-surface-variant relative z-20 overflow-hidden hidden md:block">
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-multiply" id="threejs-container-STATS"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="white-precision-glass rounded-[2.5rem] p-8 sm:p-14 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 text-center reveal">
+            <div class="group cursor-default">
+                <div class="text-4xl sm:text-6xl font-extrabold text-on-surface mb-2 group-hover:text-primary transition-colors duration-500" data-count-to="500" data-suffix="+">0</div>
+                <div class="text-xs sm:text-sm text-slate-500 font-bold tracking-[0.15em] uppercase">Global Clients</div>
+            </div>
+            <div class="border-y md:border-y-0 md:border-x border-silver/50 py-8 md:py-0 group cursor-default">
+                <div class="text-4xl sm:text-6xl font-extrabold text-on-surface mb-2 group-hover:text-primary transition-colors duration-500" data-count-to="25" data-suffix="+">0</div>
+                <div class="text-xs sm:text-sm text-slate-500 font-bold tracking-[0.15em] uppercase">Years Experience</div>
+            </div>
+            <div class="group cursor-default">
+                <div class="text-4xl sm:text-6xl font-extrabold text-on-surface mb-2 group-hover:text-primary transition-colors duration-500" data-count-to="0.01" data-decimals="2" data-suffix="mm">0.00mm</div>
+                <div class="text-xs sm:text-sm text-slate-500 font-bold tracking-[0.15em] uppercase">Precision Tolerance</div>
+            </div>
+        </div>
+        <div class="mt-16 sm:mt-20 text-center reveal">
+            <p class="text-xl sm:text-3xl font-medium text-slate-700 max-w-4xl mx-auto leading-relaxed px-4">
+                Trishul Manufacturing integrates advanced robotics with human expertise to define the next era of industrial production.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- END: Stats Section -->
+
+<!-- BEGIN: Services Section -->
+<section class="py-16 sm:py-32 bg-surface-container relative" id="services">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="text-center mb-12 sm:mb-24 reveal">
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 text-on-surface tracking-tight">Core Manufacturing Specializations</h2>
+            <p class="text-slate-500 max-w-3xl mx-auto text-sm sm:text-lg px-2 font-medium">Vertically integrated divisions equipped with state-of-the-art technology for diverse industrial, infrastructural, and consumer applications.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10" id="services-grid">
+
+            <!-- Service 1 (Trishul Flakes / Poha Packaging Reference) -->
+            <a href="./Routs/RiceProducts/index.html" class="industrial-card glass-effect rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden group reveal block" data-tilt>
+                <div class="h-48 sm:h-64 overflow-hidden relative bg-emerald-950">
+                    <div class="absolute inset-0 bg-on-surface/10 mix-blend-overlay z-10 pointer-events-none transition-opacity group-hover:opacity-0"></div>
+                    <img alt="Trishul Rice Poha Flakes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="./img/Organic Specialty Flakes.png"/>
+                </div>
+                <div class="p-6 sm:p-8 bg-white/90 backdrop-blur-md flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-on-surface">Trishul Rice Poha Flakes</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed font-medium">Manufacturing premium quality traditional breakfast rice flakes with 0% cholesterol and zero trans-fat, packaged for supreme freshness and taste.</p>
+                    </div>
+                    <span class="inline-flex items-center text-xs sm:text-sm font-bold text-primary group-hover:translate-x-2 transition-transform">
+                        Product Details <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Service 2 (Trishul Solar Water Heater Reference) -->
+            <a href="./Routs/SolarProducts/index.html" class="industrial-card glass-effect rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden group reveal block" data-tilt>
+                <div class="h-48 sm:h-64 overflow-hidden relative bg-slate-900">
+                    <div class="absolute inset-0 bg-on-surface/10 mix-blend-overlay z-10 pointer-events-none transition-opacity group-hover:opacity-0"></div>
+                    <img alt="Trishul Solar Water Heater" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="./img/trishulSolar.png"/>
+                </div>
+                <div class="p-6 sm:p-8 bg-white/90 backdrop-blur-md flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-on-surface">Trishul Solar Water Heater</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed font-medium">Engineering high-efficiency evacuated tube solar water heaters and robust renewable rooftop systems built for maximum thermal absorption and durability.</p>
+                    </div>
+                    <span class="inline-flex items-center text-xs sm:text-sm font-bold text-primary group-hover:translate-x-2 transition-transform">
+                        View Infrastructure <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Service 3 -->
+            <a href="./Routs/Door&SafeProducts/index.html" class="industrial-card glass-effect rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden group reveal block" data-tilt>
+                <div class="h-48 sm:h-64 overflow-hidden relative bg-slate-900">
+                    <div class="absolute inset-0 bg-on-surface/10 mix-blend-overlay z-10 pointer-events-none transition-opacity group-hover:opacity-0"></div>
+                    <img alt="Trishul Safe and Door" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="./img/safe.png"/>
+                </div>
+                <div class="p-6 sm:p-8 bg-white/90 backdrop-blur-md flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-on-surface">Trishul Safe & Door</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed font-medium">Designing impenetrable, heavy-duty security enclosures, vault doors, and industrial-grade safes with uncompromising structural integrity.</p>
+                    </div>
+                    <span class="inline-flex items-center text-xs sm:text-sm font-bold text-primary group-hover:translate-x-2 transition-transform">
+                        Security Specs <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Service 4 -->
+            <a href="./Routs/CementProducts/id.html" class="industrial-card glass-effect rounded-[1.75rem] sm:rounded-[2rem] overflow-hidden group reveal block" data-tilt>
+                <div class="h-48 sm:h-64 overflow-hidden relative bg-slate-900">
+                    <div class="absolute inset-0 bg-on-surface/10 mix-blend-overlay z-10 pointer-events-none transition-opacity group-hover:opacity-0"></div>
+                    <img alt="Dhareshwer Cement Products" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" src="./img/cement.png"/>
+                </div>
+                <div class="p-6 sm:p-8 bg-white/90 backdrop-blur-md flex flex-col flex-grow justify-between">
+                    <div>
+                        <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-on-surface">Dhareshwer Cement Products</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed font-medium">Producing high-strength precast concrete components and heavy-duty cement structures designed to withstand rigorous construction demands.</p>
+                    </div>
+                    <span class="inline-flex items-center text-xs sm:text-sm font-bold text-primary group-hover:translate-x-2 transition-transform">
+                        Product Range <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+<!-- END: Services Section -->
+
+<!-- BEGIN: Interactive Real Application Imagery Gallery Section -->
+<section class="py-24 sm:py-36 bg-gradient-to-b from-surface-container via-white to-surface-variant relative overflow-hidden" id="image-gallery">
+    <!-- Decorative Ambient Background Blobs -->
+    <div class="absolute top-1/4 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-emerald-400/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="text-center mb-16 sm:mb-24 reveal">
+            <span class="inline-block px-5 py-2 mb-4 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary/10 border border-primary/20 rounded-full shadow-sm">
+                Interactive Showcase
+            </span>
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-on-surface">Real Application Imagery</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-base sm:text-lg font-medium leading-relaxed">Immerse yourself in our premier manufacturing lines. Hover or tap cards to experience high-definition engineering views.</p>
+        </div>
+
+        <!-- Interactive Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Gallery Card 1: Trishul Poha / Flakes -->
+            <div class="gallery-card group relative overflow-hidden rounded-[2.5rem] shadow-xl h-[420px] reveal bg-emerald-950 flex flex-col justify-end p-8 border border-white/40">
+                <div class="absolute inset-0">
+                    <img src="./img/Organic Specialty Flakes.png" alt="Trishul Rice Poha Flakes" class="w-full h-full object-cover opacity-85 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                </div>
+                <div class="relative z-10 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-primary/20 backdrop-blur-md flex items-center justify-center text-primary mb-4 border border-primary/30">
+                        <span class="material-symbols-outlined text-xl">restaurant</span>
+                    </div>
+                    <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Trishul Flakes</span>
+                    <h3 class="text-2xl font-extrabold text-white mt-1 mb-2">Trishul Rice Poha</h3>
+                    <p class="text-xs text-slate-300 font-medium leading-relaxed opacity-90">Healthy breakfast selection formulated with 0% cholesterol and zero trans-fat under highest standards.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Card 2: Trishul Solar Water Heater -->
+            <div class="gallery-card group relative overflow-hidden rounded-[2.5rem] shadow-xl h-[420px] reveal bg-slate-900 flex flex-col justify-end p-8 border border-white/40">
+                <div class="absolute inset-0">
+                    <img src="./img/trishulSolar.png" alt="Trishul Solar Water Heater" class="w-full h-full object-cover opacity-85 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                </div>
+                <div class="relative z-10 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-primary/20 backdrop-blur-md flex items-center justify-center text-primary mb-4 border border-primary/30">
+                        <span class="material-symbols-outlined text-xl">solar_power</span>
+                    </div>
+                    <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Trishul Solar</span>
+                    <h3 class="text-2xl font-extrabold text-white mt-1 mb-2">Solar Water Heater</h3>
+                    <p class="text-xs text-slate-300 font-medium leading-relaxed opacity-90">High-efficiency evacuated tube collectors engineered for maximum thermal absorption on residential & commercial roofs.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Card 3: Safe & Door Systems -->
+            <div class="gallery-card group relative overflow-hidden rounded-[2.5rem] shadow-xl h-[420px] reveal bg-slate-900 flex flex-col justify-end p-8 border border-white/40">
+                <div class="absolute inset-0">
+                    <img src="./img/safe.png" alt="Trishul Safe and Door" class="w-full h-full object-cover opacity-85 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                </div>
+                <div class="relative z-10 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-primary/20 backdrop-blur-md flex items-center justify-center text-primary mb-4 border border-primary/30">
+                        <span class="material-symbols-outlined text-xl">security</span>
+                    </div>
+                    <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Security Vaults</span>
+                    <h3 class="text-2xl font-extrabold text-white mt-1 mb-2">Safe & Door Systems</h3>
+                    <p class="text-xs text-slate-300 font-medium leading-relaxed opacity-90">Heavy-duty impenetrable steel enclosures and vault doors designed for ultimate industrial protection.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Card 4: Precast Cement Products -->
+            <div class="gallery-card group relative overflow-hidden rounded-[2.5rem] shadow-xl h-[420px] reveal bg-slate-900 flex flex-col justify-end p-8 border border-white/40">
+                <div class="absolute inset-0">
+                    <img src="./img/cement.png" alt="Dhareshwer Cement Products" class="w-full h-full object-cover opacity-85 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                </div>
+                <div class="relative z-10 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <div class="w-10 h-10 rounded-xl bg-primary/20 backdrop-blur-md flex items-center justify-center text-primary mb-4 border border-primary/30">
+                        <span class="material-symbols-outlined text-xl">foundation</span>
+                    </div>
+                    <span class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase">Dhareshwer</span>
+                    <h3 class="text-2xl font-extrabold text-white mt-1 mb-2">Precast Cement Units</h3>
+                    <p class="text-xs text-slate-300 font-medium leading-relaxed opacity-90">Rugged construction materials built to withstand heavy infrastructural loads and extreme structural demands.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- END: Image Gallery Section -->
+
+<!-- BEGIN: Why Choose Section -->
+<section class="relative py-20 sm:py-32 overflow-hidden bg-white" id="why-choose-trishul">
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-60" id="threejs-container-WHY_CHOOSE"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 sm:mb-24 reveal">
+            <span class="inline-block px-5 py-2 mb-6 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary/5 border border-primary/20 rounded-full">
+                The Trishul Advantage
+            </span>
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-on-surface">Why Choose Trishul Manufacturing</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-base sm:text-xl font-medium leading-relaxed">Leading the industry with a synergy of heritage expertise and future-ready technological integration.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
+            <!-- Why Choose Card 1 -->
+            <div class="extreme-glass p-8 sm:p-12 rounded-[2.5rem] reveal group hover:border-primary/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500" data-tilt>
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/10 to-silver/20 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 icon-float border border-silver/50 group-hover:bg-primary/20 transition-colors">
+                    <span class="material-symbols-outlined text-primary text-2xl sm:text-3xl">verified</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-on-surface">Unmatched Precision</h3>
+                <p class="text-slate-500 leading-relaxed font-medium text-sm sm:text-base">Adhering to strict <span class="font-bold text-primary">ISO 9001:2015</span> standards, we deliver components with micron-level tolerances, ensuring flawless performance in mission-critical applications.</p>
+            </div>
+            <!-- Why Choose Card 2 -->
+            <div class="extreme-glass p-8 sm:p-12 rounded-[2.5rem] reveal group hover:border-primary/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500" data-tilt>
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/10 to-silver/20 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 icon-float border border-silver/50 group-hover:bg-primary/20 transition-colors" style="animation-delay: 0.5s;">
+                    <span class="material-symbols-outlined text-primary text-2xl sm:text-3xl">precision_manufacturing</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-on-surface">Scalable Infrastructure</h3>
+                <p class="text-slate-500 leading-relaxed font-medium text-sm sm:text-base">Our <span class="font-bold text-primary">100,000+ sq. ft.</span> facility is equipped with high-speed robotic assembly lines, capable of handling high-volume production with absolute consistency.</p>
+            </div>
+            <!-- Why Choose Card 3 -->
+            <div class="extreme-glass p-8 sm:p-12 rounded-[2.5rem] reveal group hover:border-primary/50 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500" data-tilt>
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-primary/10 to-silver/20 rounded-2xl flex items-center justify-center mb-6 sm:mb-8 icon-float border border-silver/50 group-hover:bg-primary/20 transition-colors" style="animation-delay: 1s;">
+                    <span class="material-symbols-outlined text-primary text-2xl sm:text-3xl">eco</span>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-on-surface">Sustainable Innovation</h3>
+                <p class="text-slate-500 leading-relaxed font-medium text-sm sm:text-base">Committed to <span class="font-bold text-primary">Net-Zero goals</span>, we implement eco-industrial practices and energy-efficient processes to minimize environmental footprint without compromising on quality.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: Why Choose Section -->
+
+<!-- BEGIN: Infrastructure Section -->
+<section class="py-20 sm:py-32 bg-surface-variant text-center overflow-hidden relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 reveal text-on-surface">Precision Infrastructure</h2>
+        <p class="text-slate-500 mb-12 sm:mb-24 text-base sm:text-xl font-medium max-w-3xl mx-auto reveal">Operating across 100,000+ sq. ft. of advanced manufacturing space with vertically integrated capabilities.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-center" id="infra-pillars">
+            <!-- Pillar 1 -->
+            <div class="white-precision-glass p-8 sm:p-12 rounded-[2rem] shadow-sm text-left reveal relative overflow-hidden group">
+                <svg class="absolute right-0 top-0 h-full w-1.5 stat-tick group-hover:scale-y-110 transition-transform origin-top" viewBox="0 0 6 100" preserveAspectRatio="none"><rect width="6" height="100" fill="#cbd5e1" opacity="0.5"></rect></svg>
+                <span class="inline-block bg-slate-100 text-slate-700 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-6 border border-silver/50">Phase 1</span>
+                <h4 class="text-xl sm:text-2xl font-bold mb-3 text-on-surface">R&amp;D and Design</h4>
+                <p class="text-sm sm:text-base text-slate-500 leading-relaxed font-medium">Utilizing advanced CAD/CAM simulation to optimize part performance before production begins.</p>
+            </div>
+            <!-- Pillar 2 (Featured) -->
+            <div class="white-precision-glass p-8 sm:p-12 rounded-[2rem] shadow-2xl shadow-primary/10 border-primary/30 relative z-10 md:scale-110 text-left reveal group">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-[2rem] pointer-events-none"></div>
+                <span class="inline-block bg-primary text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-6 shadow-md shadow-primary/30">Phase 2</span>
+                <h4 class="text-xl sm:text-2xl font-bold mb-3 text-on-surface">Automated Production</h4>
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">Robotic-assisted manufacturing ensures 24/7 efficiency and absolute consistency in every batch.</p>
+            </div>
+            <!-- Pillar 3 -->
+            <div class="white-precision-glass p-8 sm:p-12 rounded-[2rem] shadow-sm text-left reveal relative overflow-hidden group">
+                <svg class="absolute right-0 top-0 h-full w-1.5 stat-tick group-hover:scale-y-110 transition-transform origin-bottom" viewBox="0 0 6 100" preserveAspectRatio="none"><rect width="6" height="100" fill="#cbd5e1" opacity="0.5"></rect></svg>
+                <span class="inline-block bg-slate-100 text-slate-700 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full mb-6 border border-silver/50">Phase 3</span>
+                <h4 class="text-xl sm:text-2xl font-bold mb-3 text-on-surface">Quality Control</h4>
+                <p class="text-sm sm:text-base text-slate-500 leading-relaxed font-medium">Rigorous multi-stage testing including CMM inspections to meet international quality standards.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: Infrastructure Section -->
+
+<!-- BEGIN: Engineering Reviews Section -->
+<section class="relative py-20 sm:py-32 overflow-hidden bg-white" id="engineering-reviews">
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-60 mix-blend-multiply" id="threejs-container-REVIEWS"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 sm:mb-24 reveal">
+            <span class="inline-block px-5 py-2 mb-6 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary/5 border border-primary/20 rounded-full">
+                Validated Performance
+            </span>
+            <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-on-surface">Engineering Reviews</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-base sm:text-xl font-medium">Insights from industry leaders on our technical integration and manufacturing precision.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="white-precision-glass p-8 sm:p-10 rounded-[2.5rem] reveal flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl hover:border-primary/40 transition-all duration-300">
+                <div>
+                    <div class="flex items-center space-x-1.5 mb-6">
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                    </div>
+                    <p class="text-slate-600 italic leading-relaxed mb-8 text-sm sm:text-base font-medium">"Trishul's ability to maintain high manufacturing standards across their solar and food packaging divisions is unmatched. Their technical R&amp;D phase saved us months of project deployment."</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 overflow-hidden flex-shrink-0 border border-slate-200">
+                        <div class="w-full h-full bg-slate-800 flex items-center justify-center text-white font-bold text-sm">MC</div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-on-surface text-base">Marcus Chen</h4>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Director of Ops, SolarTech</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="white-precision-glass p-8 sm:p-10 rounded-[2.5rem] reveal flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl hover:border-primary/40 transition-all duration-300">
+                <div>
+                    <div class="flex items-center space-x-1.5 mb-6">
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                    </div>
+                    <p class="text-slate-600 italic leading-relaxed mb-8 text-sm sm:text-base font-medium">"The vertically integrated approach of Trishul Manufacturing provides a transparency level that is essential for long-term commercial supply chains."</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 overflow-hidden flex-shrink-0 border border-slate-200">
+                        <div class="w-full h-full bg-primary flex items-center justify-center text-white font-bold text-sm">SJ</div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-on-surface text-base">Sarah Jenkins</h4>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Lead Engineer, AeroFrame</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="white-precision-glass p-8 sm:p-10 rounded-[2.5rem] reveal flex flex-col justify-between h-full hover:-translate-y-2 hover:shadow-xl hover:border-primary/40 transition-all duration-300">
+                <div>
+                    <div class="flex items-center space-x-1.5 mb-6">
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                        <span class="material-symbols-outlined text-primary text-xl">star</span>
+                    </div>
+                    <p class="text-slate-600 italic leading-relaxed mb-8 text-sm sm:text-base font-medium">"Sustainability and quality are often at odds in heavy industrial production, but Trishul has mastered both. Their facility is a benchmark for modern Indian manufacturing."</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 overflow-hidden flex-shrink-0 border border-slate-200">
+                        <div class="w-full h-full bg-slate-600 flex items-center justify-center text-white font-bold text-sm">DM</div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-on-surface text-base">David Miller</h4>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">VP Engineering, HeavyVolt</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END: Engineering Reviews Section -->
+
+<!-- BEGIN: Floating Actions -->
+<div class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[100] flex flex-col space-y-4">
+    <a class="floating-action magnetic-btn w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 border border-white/20 transition-transform hover:scale-110 active:scale-95" href="https://wa.me/919909925000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.284l-.539 2.016 2.057-.54c.953.52 1.953.791 3.231.791 3.18 0 5.766-2.586 5.767-5.766 0-3.18-2.587-5.751-5.767-5.751zm3.467 8.216c-.14.394-.713.722-1.103.802-.353.072-.813.127-1.311-.034-2.071-.669-3.411-2.766-3.515-2.903-.104-.138-.851-1.131-.851-2.153 0-1.021.52-1.522.705-1.722.185-.2.404-.251.539-.251.134 0 .269.001.385.007.124.006.291-.047.456.353.169.41.579 1.411.629 1.511.05.1.084.217.017.35-.067.133-.101.217-.201.334-.1.117-.21.262-.3.35-.1.1-.205.209-.089.41.116.201.517.854 1.111 1.383.764.681 1.405.892 1.606.992.201.1.319.083.438-.053.119-.137.512-.596.649-.801.137-.205.274-.173.463-.103.189.07 1.2.566 1.405.67.205.104.341.155.391.242.05.087.05.503-.09 1.127z"></path></svg>
+    </a>
+    <a class="floating-action magnetic-btn w-14 h-14 bg-on-surface text-white rounded-full flex items-center justify-center shadow-2xl border border-white/20 transition-transform hover:scale-110 active:scale-95" href="tel:+919909925000" aria-label="Call Us">
+        <span class="material-symbols-outlined text-[24px]">call</span>
+    </a>
+</div>
+<!-- END: Floating Actions -->
+
+<!-- BEGIN: Footer -->
+<footer class="py-16 border-t border-silver/50 bg-surface-variant relative overflow-hidden" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12 items-start">
+            <!-- Brand & Info -->
+            <div class="flex flex-col space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-on-surface rounded-lg flex items-center justify-center shadow-md">
+                        <span class="text-white text-sm font-extrabold">T</span>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-on-surface">TRISHUL Manufacturing</span>
+                </div>
+                <p class="text-sm text-slate-600 font-medium leading-relaxed">
+                    Delivering high-performance industrial solutions, precast cement products, rice flakes, solar heaters, and vault security systems.
+                </p>
+            </div>
+            <!-- Address & Contact -->
+            <div class="flex flex-col space-y-3">
+                <h4 class="text-base font-bold text-on-surface">Corporate Headquarters</h4>
+                <p class="text-sm text-slate-600 font-medium leading-relaxed flex items-start space-x-2">
+                    <span class="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
+                    <span>Vorakotda road opp. sub jail GONDAL</span>
+                </p>
+                <p class="text-sm text-slate-600 font-medium flex items-center space-x-2">
+                    <span class="material-symbols-outlined text-primary text-base">call</span>
+                    <a href="tel:+919909925000" class="hover:text-primary transition-colors">+91 99099 25000</a>
+                </p>
+            </div>
+            <!-- Social & Links -->
+            <div class="flex flex-col space-y-3">
+                <h4 class="text-base font-bold text-on-surface">Connect With Us</h4>
+                <div class="flex items-center space-x-4">
+                    <a href="https://facebook.com/trishulmanufacturer" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white border border-silver/50 flex items-center justify-center text-slate-700 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+                        <span class="text-xs font-extrabold">FB</span>
+                    </a>
+                    <a href="https://instagram.com/trishulmanufacturer" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white border border-silver/50 flex items-center justify-center text-slate-700 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+                        <span class="text-xs font-extrabold">IG</span>
+                    </a>
+                    <a href="https://wa.me/919909925000" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white border border-silver/50 flex items-center justify-center text-slate-700 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm">
+                        <span class="text-xs font-extrabold">WA</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-silver/40 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-400 font-medium">
+            <p>© 2026 Trishul Manufacturing. 25+ Years of Engineering Precision.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0 font-bold text-slate-600">
+                <a class="hover:text-primary transition-colors" href="#">Corporate</a>
+                <a class="hover:text-primary transition-colors" href="#">Sustainability</a>
+                <a class="hover:text-primary transition-colors" href="#contact">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END: Footer -->
+
+<!-- BEGIN: ThreeJS Script -->
+<script>
+    (function() {
+        // --- 1. Hero Core Animation ---
+        const heroContainer = document.getElementById('threejs-container-ANIMATION_TRISHUL_CORE');
+        if (heroContainer) {
+            const width = heroContainer.clientWidth || window.innerWidth;
+            const height = heroContainer.clientHeight || window.innerHeight;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            camera.position.z = 5;
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            heroContainer.appendChild(renderer.domElement);
+            
+            const group = new THREE.Group();
+            scene.add(group);
+            
+            // Core
+            const coreGeom = new THREE.CylinderGeometry(0.8, 0.8, 2, 6);
+            const coreMat = new THREE.MeshPhongMaterial({ color: 0x047857, shininess: 100, transparent: true, opacity: 0.85, flatShading: true });
+            const core = new THREE.Mesh(coreGeom, coreMat);
+            group.add(core);
+
+            // Rings
+            const ringGeom = new THREE.TorusGeometry(1.8, 0.03, 16, 100);
+            const ringMatPrimary = new THREE.MeshStandardMaterial({ color: 0x059669, metalness: 0.9, roughness: 0.1 });
+            const ringMatSilver = new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 1.0, roughness: 0.2 });
+            const rings = [];
+            for(let i = 0; i < 3; i++) {
+                const ring = new THREE.Mesh(ringGeom, i % 2 === 0 ? ringMatPrimary : ringMatSilver);
+                ring.rotation.x = Math.random() * Math.PI;
+                ring.rotation.y = Math.random() * Math.PI;
+                group.add(ring);
+                rings.push(ring);
+            }
+
+            // Satellites
+            const satGeom = new THREE.OctahedronGeometry(0.12, 0);
+            const satMat = new THREE.MeshPhongMaterial({ color: 0xcbd5e1, flatShading: true });
+            const satellites = [];
+            for(let i = 0; i < 6; i++) {
+                const sat = new THREE.Mesh(satGeom, i % 2 === 0 ? satMat : new THREE.MeshPhongMaterial({ color: 0x059669, flatShading: true }));
+                const angle = (i / 6) * Math.PI * 2;
+                sat.userData = { angle, radius: 2.6 + Math.random() * 0.5, speed: 0.4 + Math.random() * 0.3, yOff: (Math.random() - 0.5) * 1.5 };
+                group.add(sat);
+                satellites.push(sat);
+            }
+
+            // Particles
+            const particlesGeom = new THREE.BufferGeometry();
+            const count = 500;
+            const posArray = new Float32Array(count * 3);
+            for(let i = 0; i < count * 3; i++) posArray[i] = (Math.random() - 0.5) * 15;
+            particlesGeom.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            const particlesMat = new THREE.PointsMaterial({ size: 0.02, color: 0x64748b, transparent: true, opacity: 0.25 });
+            const particlesMesh = new THREE.Points(particlesGeom, particlesMat);
+            scene.add(particlesMesh);
+
+            scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+            const pointLight = new THREE.PointLight(0x059669, 2);
+            pointLight.position.set(5, 5, 5);
+            scene.add(pointLight);
+            const silverLight = new THREE.PointLight(0xffffff, 1.5);
+            silverLight.position.set(-5, -5, -5);
+            scene.add(silverLight);
+
+            let mouseX = 0, mouseY = 0;
+            window.addEventListener('mousemove', (e) => { 
+                mouseX = (e.clientX / window.innerWidth) - 0.5; 
+                mouseY = (e.clientY / window.innerHeight) - 0.5; 
+            });
+
+            let scrollSpin = 0;
+            if (window.ScrollTrigger) {
+                ScrollTrigger.create({
+                    trigger: heroContainer.closest('main'),
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true,
+                    onUpdate: (self) => { scrollSpin = self.progress * Math.PI * 1.5; }
+                });
+            }
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                const time = Date.now() * 0.001;
+                group.rotation.y += 0.005 + (mouseX * 0.05);
+                group.rotation.x += 0.002 + (mouseY * 0.05);
+                group.rotation.z = scrollSpin * 0.1;
+                const s = 1 + Math.sin(time * 2) * 0.03;
+                core.scale.set(s, s, s);
+                rings.forEach((ring, i) => { ring.rotation.z += 0.01 * (i + 1); });
+                satellites.forEach((sat) => {
+                    sat.userData.angle += 0.012 * sat.userData.speed;
+                    sat.position.x = Math.cos(sat.userData.angle) * sat.userData.radius;
+                    sat.position.z = Math.sin(sat.userData.angle) * sat.userData.radius;
+                    sat.position.y = sat.userData.yOff + Math.sin(time * 2 + sat.userData.angle) * 0.15;
+                    sat.rotation.x += 0.02;
+                    sat.rotation.y += 0.02;
+                });
+                particlesMesh.rotation.y += 0.0005;
+                renderer.render(scene, camera);
+            };
+            animate();
+            window.addEventListener('resize', () => {
+                const w = heroContainer.clientWidth || window.innerWidth;
+                const h = heroContainer.clientHeight || window.innerHeight;
+                camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h);
+            });
+        }
+
+        // --- 2. Stats Field ---
+        const statsContainer = document.getElementById('threejs-container-STATS');
+        if (statsContainer) {
+            const width = statsContainer.clientWidth || window.innerWidth;
+            const height = statsContainer.clientHeight || 400;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+            camera.position.z = 8;
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            statsContainer.appendChild(renderer.domElement);
+            
+            const group = new THREE.Group();
+            scene.add(group);
+            const lineMat = new THREE.LineBasicMaterial({ color: 0x64748b, transparent: true, opacity: 0.15 });
+            for (let i = -6; i <= 6; i += 2) {
+                const geom = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-12, i, 0), new THREE.Vector3(12, i, 0)]);
+                group.add(new THREE.Line(geom, lineMat));
+            }
+            const animate = () => {
+                requestAnimationFrame(animate);
+                const t = Date.now() * 0.0002;
+                group.position.y = Math.sin(t) * 0.4;
+                group.rotation.z = Math.sin(t * 0.5) * 0.03;
+                renderer.render(scene, camera);
+            };
+            animate();
+            window.addEventListener('resize', () => {
+                const w = statsContainer.clientWidth || window.innerWidth;
+                const h = statsContainer.clientHeight || 400;
+                camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h);
+            });
+        }
+
+        // --- 3. Why Choose Network ---
+        const whyContainer = document.getElementById('threejs-container-WHY_CHOOSE');
+        if (whyContainer) {
+            const width = whyContainer.clientWidth || window.innerWidth;
+            const height = whyContainer.clientHeight || window.innerHeight;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            camera.position.z = 10;
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            whyContainer.appendChild(renderer.domElement);
+            
+            const group = new THREE.Group();
+            scene.add(group);
+            
+            const particleCount = window.innerWidth < 768 ? 500 : 1500;
+            const posArray = new Float32Array(particleCount * 3);
+            for(let i = 0; i < particleCount * 3; i++) posArray[i] = (Math.random() - 0.5) * 40;
+            const particlesGeom = new THREE.BufferGeometry();
+            particlesGeom.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            const particlesMat = new THREE.PointsMaterial({ size: 0.03, color: 0x64748b, transparent: true, opacity: 0.2 });
+            const particleSystem = new THREE.Points(particlesGeom, particlesMat);
+            group.add(particleSystem);
+            
+            const nodes = [];
+            const nodeCount = window.innerWidth < 768 ? 20 : 60;
+            const geometry = new THREE.IcosahedronGeometry(0.12, 0);
+            const silverMat = new THREE.MeshPhongMaterial({ color: 0xcbd5e1, transparent: true, opacity: 0.6, flatShading: true, shininess: 100 });
+            const greenMat = new THREE.MeshPhongMaterial({ color: 0x059669, transparent: true, opacity: 0.5 });
+            
+            for(let i = 0; i < nodeCount; i++) {
+                const mesh = new THREE.Mesh(geometry, i % 3 === 0 ? greenMat : silverMat);
+                mesh.position.set((Math.random() - 0.5) * 30, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 15);
+                mesh.userData = { velocity: new THREE.Vector3((Math.random() - 0.5) * 0.015, (Math.random() - 0.5) * 0.015, (Math.random() - 0.5) * 0.008), rotationSpeed: (Math.random() - 0.5) * 0.03 };
+                group.add(mesh);
+                nodes.push(mesh);
+            }
+            
+            scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+            const light1 = new THREE.PointLight(0x059669, 2);
+            light1.position.set(10, 10, 10);
+            scene.add(light1);
+            
+            let mouseX = 0, mouseY = 0;
+            window.addEventListener('mousemove', (e) => { mouseX = (e.clientX / window.innerWidth) - 0.5; mouseY = (e.clientY / window.innerHeight) - 0.5; });
+
+            const traceLines = new THREE.LineSegments(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: 0x64748b, transparent: true, opacity: 0.15 }));
+            group.add(traceLines);
+            
+            setInterval(() => {
+                if (window.innerWidth < 768) return;
+                const pts = [];
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        if (nodes[i].position.distanceTo(nodes[j].position) < 4) {
+                            pts.push(nodes[i].position.clone(), nodes[j].position.clone());
+                        }
+                    }
+                }
+                traceLines.geometry.dispose();
+                traceLines.geometry = new THREE.BufferGeometry().setFromPoints(pts);
+            }, 600);
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                const time = Date.now() * 0.001;
+                nodes.forEach((node, i) => {
+                    node.position.add(node.userData.velocity);
+                    node.rotation.x += node.userData.rotationSpeed;
+                    node.rotation.y += node.userData.rotationSpeed;
+                    if (Math.abs(node.position.x) > 15) node.userData.velocity.x *= -1;
+                    if (Math.abs(node.position.y) > 10) node.userData.velocity.y *= -1;
+                    if (Math.abs(node.position.z) > 8) node.userData.velocity.z *= -1;
+                    const s = 1 + Math.sin(time + i) * 0.1;
+                    node.scale.set(s, s, s);
+                });
+                group.rotation.y += (mouseX * 0.4 - group.rotation.y) * 0.05;
+                group.rotation.x += (mouseY * 0.4 - group.rotation.x) * 0.05;
+                particleSystem.rotation.y += 0.001;
+                renderer.render(scene, camera);
+            };
+            animate();
+            window.addEventListener('resize', () => {
+                const w = whyContainer.clientWidth || window.innerWidth;
+                const h = whyContainer.clientHeight || window.innerHeight;
+                camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h);
+            });
+        }
+
+        // --- 4. Reviews Background ---
+        const reviewsContainer = document.getElementById('threejs-container-REVIEWS');
+        if (reviewsContainer) {
+            const width = reviewsContainer.clientWidth || window.innerWidth;
+            const height = reviewsContainer.clientHeight || window.innerHeight;
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            camera.position.z = 12;
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            reviewsContainer.appendChild(renderer.domElement);
+            
+            const group = new THREE.Group();
+            scene.add(group);
+            const nodes = [];
+            const nodeCount = window.innerWidth < 768 ? 20 : 40;
+            const geometry = new THREE.SphereGeometry(0.08, 16, 16);
+            const material = new THREE.MeshPhongMaterial({ color: 0x94a3b8, transparent: true, opacity: 0.3 });
+            for(let i = 0; i < nodeCount; i++) {
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.position.set((Math.random() - 0.5) * 35, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 10);
+                mesh.userData = { velocity: new THREE.Vector3((Math.random() - 0.5) * 0.015, (Math.random() - 0.5) * 0.015, (Math.random() - 0.5) * 0.01) };
+                group.add(mesh);
+                nodes.push(mesh);
+            }
+            scene.add(new THREE.AmbientLight(0xffffff, 0.9));
+            const pointLight = new THREE.PointLight(0xcbd5e1, 1);
+            pointLight.position.set(10, 10, 10);
+            scene.add(pointLight);
+            
+            const animate = () => {
+                requestAnimationFrame(animate);
+                nodes.forEach((node) => {
+                    node.position.add(node.userData.velocity);
+                    if (Math.abs(node.position.x) > 17) node.userData.velocity.x *= -1;
+                    if (Math.abs(node.position.y) > 10) node.userData.velocity.y *= -1;
+                });
+                group.rotation.y += 0.0005;
+                group.rotation.x += 0.0002;
+                renderer.render(scene, camera);
+            };
+            animate();
+            window.addEventListener('resize', () => {
+                const w = reviewsContainer.clientWidth || window.innerWidth;
+                const h = reviewsContainer.clientHeight || window.innerHeight;
+                camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h);
+            });
+        }
+    })();
+</script>
+<!-- END: ThreeJS Script -->
+
+<!-- BEGIN: GSAP Animation Script -->
+<script>
+    (function() {
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // --- Mobile Menu Interaction ---
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = mobileBtn.querySelectorAll('span');
+        let isMenuOpen = false;
+
+        const mobileMenuTl = gsap.timeline({ paused: true, reversed: true });
+
+        mobileMenuTl
+            .set(mobileMenu, { display: 'flex' })
+            .to(mobileMenu, { x: 0, opacity: 1, duration: 0.6, ease: 'expo.inOut' })
+            .fromTo('.mobile-link',
+                { y: 40, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'back.out(1.2)' },
+                "-=0.3"
+            );
+
+        const closeMenu = () => {
+            isMenuOpen = false;
+            gsap.to(hamburgerLines[0], { y: 0, rotation: 0, duration: 0.4, ease: 'power3.inOut' });
+            gsap.to(hamburgerLines[1], { opacity: 1, duration: 0.4, delay: 0.1 });
+            gsap.to(hamburgerLines[2], { y: 0, rotation: 0, duration: 0.4, ease: 'power3.inOut' });
+            document.body.style.overflow = '';
+            mobileMenuTl.reverse();
+        };
+
+        const openMenu = () => {
+            isMenuOpen = true;
+            gsap.to(hamburgerLines[0], { y: 8, rotation: 45, duration: 0.4, ease: 'power3.inOut' });
+            gsap.to(hamburgerLines[1], { opacity: 0, duration: 0.2 });
+            gsap.to(hamburgerLines[2], { y: -8, rotation: -45, duration: 0.4, ease: 'power3.inOut' });
+            document.body.style.overflow = 'hidden';
+            mobileMenuTl.play();
+        };
+
+        mobileBtn.addEventListener('click', () => { isMenuOpen ? closeMenu() : openMenu(); });
+        mobileCloseBtn.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-link').forEach(link => { link.addEventListener('click', () => { if (isMenuOpen) closeMenu(); }); });
+        
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // --- Hero Timeline ---
+        const heroTl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+        heroTl
+            .fromTo('#main-nav', { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 0.2 })
+            .fromTo('#blueprint-svg', { opacity: 0 }, { opacity: 1, duration: 0.6 }, '-=0.5')
+            .to('#blueprint-svg g line, #blueprint-svg g circle, #blueprint-svg g path', {
+                strokeDashoffset: 0, duration: 2, ease: 'power2.inOut', stagger: 0.1
+            }, '-=0.4')
+            .fromTo('#hero-badge', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8 }, '-=1.5')
+            .to('.hero-word', { y: '0%', duration: 1.2, ease: 'expo.out', stagger: 0.05 }, '-=0.8')
+            .fromTo('#hero-sub', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8 }, '-=0.6')
+            .fromTo('#hero-ctas', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8 }, '-=0.6');
+
+        // Reveal Animations
+        gsap.utils.toArray('.reveal').forEach((el) => {
+            gsap.fromTo(el,
+                { opacity: 0, y: 30, scale: 0.98 },
+                {
+                    opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out',
+                    scrollTrigger: { 
+                        trigger: el, 
+                        start: 'top 95%', 
+                        toggleActions: 'play none none none' 
+                    }
+                }
+            );
+        });
+
+        // Number Counters
+        document.querySelectorAll('[data-count-to]').forEach((el) => {
+            const target = parseFloat(el.dataset.countTo);
+            const decimals = parseInt(el.dataset.decimals || '0', 10);
+            const suffix = el.dataset.suffix || '';
+            const counter = { val: 0 };
+            ScrollTrigger.create({
+                trigger: el, start: 'top 95%', once: true,
+                onEnter: () => {
+                    gsap.to(counter, {
+                        val: target, duration: 2, ease: 'power3.out',
+                        onUpdate: () => { el.textContent = counter.val.toFixed(decimals) + suffix; }
+                    });
+                }
+            });
+        });
+
+        // Pill Nav Scroll Effect
+        ScrollTrigger.create({
+            trigger: 'body',
+            start: 'top -100',
+            onEnter: () => gsap.to('#main-nav', { backgroundColor: 'rgba(255,255,255,0.95)', padding: '0.25rem 0', duration: 0.4 }),
+            onLeaveBack: () => gsap.to('#main-nav', { backgroundColor: 'rgba(255,255,255,0.8)', padding: '0 0', duration: 0.4 })
+        });
+
+        // Magnetic Buttons (Desktop only)
+        if(window.innerWidth >= 768) {
+            document.querySelectorAll('.magnetic-btn').forEach((btn) => {
+                const xTo = gsap.quickTo(btn, 'x', { duration: 0.4, ease: 'power3.out' });
+                const yTo = gsap.quickTo(btn, 'y', { duration: 0.4, ease: 'power3.out' });
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    xTo((e.clientX - rect.left - rect.width / 2) * 0.3);
+                    yTo((e.clientY - rect.top - rect.height / 2) * 0.3);
+                });
+                btn.addEventListener('mouseleave', () => { xTo(0); yTo(0); });
+            });
+
+            // Advanced Tilt Effect for Cards
+            document.querySelectorAll('[data-tilt]').forEach((card) => {
+                const rotX = gsap.quickTo(card, 'rotationX', { duration: 0.6, ease: 'power2.out' });
+                const rotY = gsap.quickTo(card, 'rotationY', { duration: 0.6, ease: 'power2.out' });
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const px = (e.clientX - rect.left) / rect.width - 0.5;
+                    const py = (e.clientY - rect.top) / rect.height - 0.5;
+                    rotY(px * 12); rotX(py * -12);
+                });
+                card.addEventListener('mouseleave', () => { rotX(0); rotY(0); });
+            });
+        }
+
+        if (reduceMotion) gsap.globalTimeline.timeScale(50);
+        ScrollTrigger.refresh();
+    })();
+</script>
+</body>
+</html>

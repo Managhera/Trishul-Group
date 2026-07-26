@@ -1,0 +1,1983 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>
+      Dhareshwer Cement Products — Premium Precast & Concrete Solutions
+    </title>
+    <meta
+      name="description"
+      content="Dhareshwer Cement Products manufactures high-strength precast concrete solutions, including kerb stones, compound wall panels, paver blocks, and custom concrete products built for durability."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS CDN (Required for utility classes like fixed, flex-col, rounded-full, etc.) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link rel="apple-touch-icon" sizes="57x57" href="/TrishulGroup/icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/TrishulGroup/icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/TrishulGroup/icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/TrishulGroup/icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/TrishulGroup/icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/TrishulGroup/icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/TrishulGroup/icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/TrishulGroup/icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/TrishulGroup/icon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/TrishulGroup/icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/TrishulGroup/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/TrishulGroup/icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/TrishulGroup/icon/favicon-16x16.png">
+<link rel="manifest" href="/TrishulGroup/icon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/TrishulGroup/icon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <style>
+      :root {
+        --ink: #0b0b0f;
+        --graphite: #151515;
+        --graphite-2: #222222;
+
+        --paper: #f8f8f8;
+        --concrete: #ececec;
+        --concrete-2: #dcdcdc;
+        --bone: #ffffff;
+
+        --line: rgba(212, 175, 55, 0.15);
+
+        --accent: #d4af37;
+        --accent-deep: #b8860b;
+        --accent-soft: #f4d06f;
+        --maxw: 1220px;
+        
+        --primary: #059669;
+        --on-surface: #0f172a;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: auto;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      .display {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 400;
+        letter-spacing: -0.012em;
+        line-height: 1.04;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 30px;
+      }
+      .eyebrow {
+        font-family: "Inter";
+        font-size: 12px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 600;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ---------- BRAND MARK: ascending skyline bars ---------- */
+      .mark {
+        width: 25px;
+        height: 25px;
+        border-radius: 7px;
+        position: relative;
+        overflow: hidden;
+        flex: 0 0 auto;
+        background: linear-gradient(
+          158deg,
+          var(--graphite-2) 0%,
+          var(--ink) 100%
+        );
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+      }
+      .mark::after {
+        content: "";
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        bottom: 22%;
+        height: 46%;
+        background:
+          linear-gradient(var(--accent-soft), var(--accent-soft)) 0 100%/24% 58%
+            no-repeat,
+          linear-gradient(var(--accent-soft), var(--accent-soft)) 38% 100%/24%
+            100% no-repeat,
+          linear-gradient(var(--accent-soft), var(--accent-soft)) 76% 100%/24%
+            78% no-repeat;
+      }
+
+      /* ---------- PRELOADER ---------- */
+      body.is-loading {
+        overflow: hidden;
+      }
+      .loader {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: var(--ink);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition:
+          opacity 0.7s ease,
+          visibility 0.7s ease;
+      }
+      .loader.is-done {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .loader__brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .loader .mark {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        animation: mark-pulse 1.9s ease-in-out infinite;
+      }
+      @keyframes mark-pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.16);
+        }
+        50% {
+          box-shadow: 0 0 0 13px rgba(212, 175, 55, 0.04);
+        }
+      }
+      .loader__name {
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 500;
+        font-size: 30px;
+        color: #f4f7f8;
+        letter-spacing: 0.06em;
+      }
+      .loader__name small {
+        display: block;
+        font-family: "Inter";
+        font-size: 10px;
+        letter-spacing: 0.34em;
+        color: rgba(244, 247, 248, 0.5);
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 4px;
+      }
+      .loader__track {
+        width: min(320px, 70vw);
+        height: 2px;
+        border-radius: 2px;
+        overflow: hidden;
+        background: rgba(244, 247, 248, 0.14);
+      }
+      .loader__fill {
+        display: block;
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+        transition: width 0.25s linear;
+      }
+      .loader__label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: rgba(244, 247, 248, 0.42);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .loader .mark {
+          animation: none;
+        }
+      }
+
+      /* ---------- NAV ---------- */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 19px 30px;
+        transition:
+          background 0.4s ease,
+          box-shadow 0.4s ease,
+          color 0.4s ease;
+        color: #fff;
+      }
+      nav.solid {
+        background: rgba(248, 248, 248, 0.9);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 1px 0 var(--line);
+        color: var(--ink);
+      }
+      .brand {
+        font-family: "Fraunces";
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+      .navlinks {
+        display: flex;
+        gap: 32px;
+        font-size: 14px;
+        font-weight: 500;
+        align-items: center;
+      }
+      .navlinks a {
+        opacity: 0.85;
+        transition: opacity 0.2s;
+      }
+      .navlinks a:hover {
+        opacity: 1;
+      }
+      
+      /* Dropdown Menu Styles */
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-toggle {
+        background: none;
+        border: none;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        opacity: 0.85;
+        transition: opacity 0.2s;
+      }
+      .dropdown-toggle:hover {
+        opacity: 1;
+      }
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: var(--graphite);
+        color: #fff;
+        min-width: 220px;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        padding: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+        border: 1px solid var(--line);
+      }
+      nav.solid .dropdown-menu {
+        background: #fff;
+        color: var(--ink);
+        border: 1px solid var(--concrete-2);
+      }
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(4px);
+      }
+      .dropdown-menu a {
+        display: block;
+        padding: 10px 14px;
+        font-size: 13.5px;
+        border-radius: 8px;
+        transition: background 0.2s, color 0.2s;
+      }
+      .dropdown-menu a:hover {
+        background: var(--accent);
+        color: var(--ink);
+      }
+
+      .navcta {
+        border: 1px solid currentColor;
+        border-radius: 100px;
+        padding: 9px 19px;
+        font-size: 13px;
+        letter-spacing: 0.01em;
+      }
+      @media (max-width: 720px) {
+        .navlinks .hidem {
+          display: none;
+        }
+      }
+
+      /* ---------- HERO SCRUB ---------- */
+      .scrollytell {
+        position: relative;
+        height: 600vh;
+        background: var(--graphite);
+      }
+      .sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .videoframe {
+        position: absolute;
+        inset: 0;
+      }
+      #build {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        background: var(--graphite);
+      }
+      .vig {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            130% 88% at 50% 0%,
+            rgba(11, 11, 15, 0.7),
+            transparent 54%
+          ),
+          linear-gradient(
+            180deg,
+            rgba(11, 11, 15, 0.4) 0%,
+            transparent 28%,
+            transparent 56%,
+            rgba(11, 11, 15, 0.6) 100%
+          );
+      }
+      .grid-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.1;
+        background-image:
+          linear-gradient(rgba(212, 175, 55, 0.6) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(212, 175, 55, 0.6) 1px, transparent 1px);
+        background-size: 64px 64px;
+        mask-image: radial-gradient(120% 90% at 50% 20%, #000, transparent 75%);
+      }
+      .stage {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: #f6f9fa;
+        padding: 0 24px;
+        opacity: 0;
+        transition:
+          opacity 0.45s ease,
+          transform 0.6s ease;
+        will-change: opacity, transform;
+        text-shadow:
+          0 2px 20px rgba(4, 10, 14, 0.6),
+          0 1px 48px rgba(4, 10, 14, 0.7);
+      }
+      .stage.top {
+        top: 13vh;
+      }
+      .stage.bottom {
+        bottom: 13vh;
+      }
+      .stage.show {
+        opacity: 1;
+      }
+      .stage h1 {
+        font-size: clamp(40px, 8.2vw, 108px);
+        font-weight: 300;
+        line-height: 0.98;
+      }
+      .stage h1 em {
+        font-style: italic;
+        color: var(--accent-soft);
+      }
+      .stage p {
+        font-size: clamp(15px, 1.7vw, 20px);
+        max-width: 34ch;
+        margin-top: 18px;
+        color: rgba(246, 249, 250, 0.92);
+        font-weight: 400;
+      }
+      .scrollcue {
+        position: absolute;
+        left: 50%;
+        bottom: 34px;
+        transform: translateX(-50%);
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+        color: #f6f9fa;
+        opacity: 0.9;
+        font-size: 11px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        transition: opacity 0.4s;
+        white-space: nowrap;
+      }
+      .scrollcue .mouse {
+        width: 24px;
+        height: 38px;
+        border: 1.5px solid rgba(246, 249, 250, 0.8);
+        border-radius: 14px;
+        position: relative;
+      }
+      .scrollcue .mouse::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 7px;
+        width: 3px;
+        height: 7px;
+        border-radius: 2px;
+        background: var(--accent-soft);
+        transform: translateX(-50%);
+        animation: wheel 1.6s ease-in-out infinite;
+      }
+      @keyframes wheel {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, 0);
+        }
+        30% {
+          opacity: 1;
+        }
+        60% {
+          opacity: 1;
+          transform: translate(-50%, 9px);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, 12px);
+        }
+      }
+      .pbar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 3px;
+        width: 0;
+        background: var(--accent);
+        z-index: 6;
+        box-shadow: 0 0 18px rgba(212, 175, 55, 0.85);
+      }
+
+      /* ---------- INTRO ---------- */
+      .intro {
+        padding: 130px 0 110px;
+        background: var(--paper);
+      }
+      .intro .lead {
+        font-family: "Fraunces";
+        font-weight: 300;
+        font-size: clamp(26px, 3.6vw, 46px);
+        line-height: 1.2;
+        max-width: 20ch;
+      }
+      .intro .lead b {
+        font-weight: 500;
+        color: var(--accent-deep);
+      }
+      .intro .sub {
+        margin-top: 28px;
+        max-width: 50ch;
+        color: var(--graphite-2);
+        font-size: 17px;
+      }
+      .introgrid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 64px;
+        align-items: end;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 34px 42px;
+        margin-top: 8px;
+      }
+      .stat .n {
+        font-family: "Fraunces";
+        font-size: 46px;
+        color: var(--ink);
+        line-height: 1;
+      }
+      .stat .l {
+        font-size: 13px;
+        color: var(--graphite-2);
+        margin-top: 7px;
+        letter-spacing: 0.01em;
+      }
+      @media (max-width: 820px) {
+        .introgrid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      /* ---------- CAPABILITIES ---------- */
+      .services {
+        padding: 34px 0 124px;
+        background: var(--paper);
+      }
+      .sec-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 24px;
+        margin-bottom: 52px;
+        flex-wrap: wrap;
+      }
+      .sec-head h2 {
+        font-size: clamp(30px, 4vw, 54px);
+        font-weight: 300;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 54px -20px rgba(0, 0, 0, 0.12);
+      }
+      .card__img-wrap {
+        position: relative;
+        height: 210px;
+        width: 100%;
+        overflow: hidden;
+        background: var(--concrete-2);
+      }
+      .card__img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .card:hover .card__img-wrap img {
+        transform: scale(1.08);
+      }
+      .card .ico {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: rgba(11, 11, 15, 0.75);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      .card .ico svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--accent-soft);
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .card__content {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .card h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+      .card p {
+        color: var(--graphite-2);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+      @media (max-width: 820px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- SPECS BAND ---------- */
+      .band {
+        background: var(--graphite);
+        color: #eef2f4;
+      }
+      .bandgrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: rgba(212, 175, 55, 0.15);
+      }
+      .bandcell {
+        background: var(--graphite);
+        padding: 46px 30px;
+      }
+      .bandcell .n {
+        font-family: "Fraunces";
+        font-size: clamp(34px, 4vw, 52px);
+        font-weight: 300;
+        color: #fff;
+        line-height: 1;
+      }
+      .bandcell .n small {
+        font-size: 0.5em;
+        color: var(--accent-soft);
+        margin-left: 2px;
+      }
+      .bandcell .l {
+        font-size: 13px;
+        color: rgba(238, 242, 244, 0.62);
+        margin-top: 10px;
+        letter-spacing: 0.02em;
+      }
+      @media (max-width: 820px) {
+        .bandgrid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* ---------- PROJECTS ---------- */
+      .gallery {
+        padding: 118px 0;
+        background: var(--concrete);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 172px;
+        gap: 14px;
+      }
+      .grid figure {
+        overflow: hidden;
+        border-radius: 14px;
+        position: relative;
+        background: var(--concrete-2);
+      }
+      .grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .grid figure:hover img {
+        transform: scale(1.06);
+      }
+      .grid .a {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
+      .grid .b {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .grid .c {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .grid .d {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .grid .e {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .grid figure::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 52%,
+          rgba(11, 11, 15, 0.8)
+        );
+        opacity: 0.85;
+        transition: opacity 0.3s;
+      }
+      .grid figcaption {
+        position: absolute;
+        left: 18px;
+        bottom: 15px;
+        right: 18px;
+        z-index: 2;
+        color: #fff;
+      }
+      .grid figcaption .t {
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+      }
+      .grid figcaption .m {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.72);
+        margin-top: 2px;
+        letter-spacing: 0.02em;
+      }
+      @media (max-width: 820px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 154px;
+        }
+        .grid .a,
+        .grid .b,
+        .grid .c,
+        .grid .d,
+        .grid .e {
+          grid-column: span 1;
+          grid-row: span 1;
+        }
+        .grid .a {
+          grid-column: span 2;
+          grid-row: span 2;
+        }
+      }
+
+      /* ---------- QUOTE ---------- */
+      .quote {
+        padding: 122px 0;
+        background: var(--ink);
+        color: #eef4f6;
+        text-align: center;
+      }
+      .quote blockquote {
+        font-family: "Fraunces";
+        font-weight: 300;
+        font-size: clamp(26px, 3.8vw, 46px);
+        line-height: 1.24;
+        max-width: 23ch;
+        margin: 0 auto;
+      }
+      .quote .who {
+        margin-top: 30px;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        color: rgba(238, 244, 246, 0.72);
+      }
+      .quote .eyebrow {
+        margin-bottom: 26px;
+        display: block;
+      }
+
+      /* ---------- CTA / FORM ---------- */
+      .cta {
+        padding: 122px 0;
+        background: var(--paper);
+      }
+      .ctagrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 66px;
+        align-items: start;
+      }
+      .cta h2 {
+        font-size: clamp(32px, 4.6vw, 58px);
+        font-weight: 300;
+        line-height: 1.02;
+      }
+      .cta .sub {
+        margin-top: 22px;
+        color: var(--graphite-2);
+        font-size: 17px;
+        max-width: 44ch;
+      }
+      .contact-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+        font-size: 16px;
+        color: var(--ink);
+      }
+      .contact-row svg {
+        width: 19px;
+        height: 19px;
+        stroke: var(--accent-deep);
+        fill: none;
+        stroke-width: 1.7;
+        flex: 0 0 auto;
+      }
+      form {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 34px;
+      }
+      form label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 0 0 7px;
+        color: var(--graphite-2);
+      }
+      form .field {
+        margin-bottom: 18px;
+      }
+      form input,
+      form select,
+      form textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        background: var(--paper);
+        border-radius: 11px;
+        padding: 13px 15px;
+        font: inherit;
+        font-size: 15px;
+        color: var(--ink);
+        transition:
+          border 0.2s,
+          box-shadow 0.2s;
+      }
+      form input:focus,
+      form select:focus,
+      form textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.16);
+      }
+      form textarea {
+        resize: vertical;
+        min-height: 96px;
+      }
+      .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      button.submit {
+        width: 100%;
+        background: var(--graphite);
+        color: #fff;
+        border: none;
+        border-radius: 100px;
+        padding: 16px;
+        font: inherit;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        transition:
+          background 0.25s,
+          transform 0.15s;
+      }
+      button.submit:hover {
+        background: var(--accent-deep);
+      }
+      button.submit:active {
+        transform: scale(0.99);
+      }
+      .formnote {
+        font-size: 12.5px;
+        color: rgba(21, 21, 21, 0.6);
+        text-align: center;
+        margin-top: 14px;
+      }
+      .sent {
+        display: none;
+        text-align: center;
+        padding: 18px 0;
+      }
+      .sent.show {
+        display: block;
+      }
+      .sent .check {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: var(--accent);
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .sent .check svg {
+        width: 28px;
+        height: 28px;
+        stroke: #fff;
+        fill: none;
+        stroke-width: 2.4;
+      }
+      @media (max-width: 820px) {
+        .ctagrid {
+          grid-template-columns: 1fr;
+          gap: 38px;
+        }
+        .two {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--ink);
+        color: rgba(255, 255, 255, 0.68);
+        padding: 64px 0 40px;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+      .foot .brand {
+        color: #fff;
+        margin-bottom: 14px;
+      }
+      .foot a {
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 14px;
+        display: block;
+        margin: 7px 0;
+        transition: color 0.2s;
+      }
+      .foot a:hover {
+        color: #fff;
+      }
+      .foot h4 {
+        color: #fff;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        font-weight: 600;
+      }
+      .legal {
+        margin-top: 50px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 12.5px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: rgba(255, 255, 255, 0.48);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (max-width: 680px) {
+        .stage h1 {
+          font-size: clamp(34px, 11vw, 60px);
+        }
+        .stage p {
+          font-size: 15px;
+        }
+      }
+      /* ---------- MOBILE HERO ---------- */
+      @media (max-width: 640px) {
+        .sticky {
+          height: 100svh;
+        }
+        .stage p {
+          max-width: 26ch;
+        }
+        .stage.top {
+          top: 15vh;
+        }
+        .stage.bottom {
+          bottom: 15vh;
+        }
+      }
+
+      /* Floating container shadow effect */
+      .floating-action {
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Smooth hardware acceleration for magnetic animation */
+      .magnetic-btn {
+          will-change: transform;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===================== PRELOADER ===================== -->
+
+    <nav id="nav">
+      <div class="brand">
+        <span class="mark"></span>Dhareshwer Cement Products
+      </div>
+      <div class="navlinks">
+        <a href="#capabilities" class="hidem">Products & Services</a>
+        <a href="#projects" class="hidem">Showcase</a>
+        
+        <!-- Trishul Group Services/Divisions Dropdown Menu -->
+        <div class="dropdown">
+          <button class="dropdown-toggle">
+            Services <span class="material-symbols-outlined" style="font-size: 16px;">expand_more</span>
+          </button>
+          <div class="dropdown-menu">
+            <a href="../CementProducts/id.html" rel="noopener noreferrer">Dhareshwer Cement Products</a>
+            <a href="../RiceProducts/index.html" rel="noopener noreferrer">Trishul Rice Mill Machinery</a>
+            <a href="../Door&SafeProducts/index.html" rel="noopener noreferrer">Trishul Safes & Doors</a>
+            <a href="../SolarProducts/index.html" rel="noopener noreferrer">Trishul Solar Energy</a>
+          </div>
+        </div>
+
+        <a href="#contact" class="navcta">Get a Quote</a>
+      </div>
+    </nav>
+
+<!-- BEGIN: Floating Actions -->
+<div class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[100] flex flex-col space-y-4">
+    <!-- WhatsApp Floating Button -->
+    <a 
+        class="floating-action magnetic-btn w-14 h-14 text-white rounded-full flex items-center justify-center shadow-2xl border border-white/20 transition-transform hover:scale-110 active:scale-95" 
+        style="background-color: #059669;"
+        href="https://wa.me/919909925000"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp"
+    >
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" style="width: 28px; height: 28px;">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.284l-.539 2.016 2.057-.54c.953.52 1.953.791 3.231.791 3.18 0 5.766-2.586 5.767-5.766 0-3.18-2.587-5.751-5.767-5.751zm3.467 8.216c-.14.394-.713.722-1.103.802-.353.072-.813.127-1.311-.034-2.071-.669-3.411-2.766-3.515-2.903-.104-.138-.851-1.131-.851-2.153 0-1.021.52-1.522.705-1.722.185-.2.404-.251.539-.251.134 0 .269.001.385.007.124.006.291-.047.456.353.169.41.579 1.411.629 1.511.05.1.084.217.017.35-.067.133-.101.217-.201.334-.1.117-.21.262-.3.35-.1.1-.205.209-.089.41.116.201.517.854 1.111 1.383.764.681 1.405.892 1.606.992.201.1.319.083.438-.053.119-.137.512-.596.649-.801.137-.205.274-.173.463-.103.189.07 1.2.566 1.405.67.205.104.341.155.391.242.05.087.05.503-.09 1.127z"></path>
+        </svg>
+    </a>
+
+    <!-- Phone Call Floating Button -->
+    <a 
+        class="floating-action magnetic-btn w-14 h-14 text-white rounded-full flex items-center justify-center shadow-2xl border border-white/20 transition-transform hover:scale-110 active:scale-95" 
+        style="background-color: #0f172a;"
+        href="tel:+919909925000"
+        aria-label="Call us"
+    >
+        <span class="material-symbols-outlined" style="font-size: 24px;">call</span>
+    </a>
+</div>
+<!-- END: Floating Actions -->
+
+    <!-- ===================== HERO SCRUB ===================== -->
+    <section class="scrollytell" id="hero">
+      <div class="sticky">
+        <div class="pbar" id="pbar"></div>
+        <div class="videoframe">
+          <video
+            id="build"
+            muted
+            playsinline
+            preload="auto"
+            poster="./poster.jpg"
+            disablepictureinpicture
+          ></video>
+          <div class="grid-overlay"></div>
+          <div class="vig"></div>
+        </div>
+
+        <div class="stage top" data-from="0" data-to="0.22" id="s1">
+          <span
+            class="eyebrow"
+            style="color: var(--accent-soft); margin-bottom: 16px"
+            >Dhareshwer Cement Products</span
+          >
+          <h1>Strength engineered<br />for every <em>foundation.</em></h1>
+          <p>
+            Premium precast concrete solutions, manufactured to the highest
+            standards of durability and precision.
+          </p>
+        </div>
+        <div class="stage top" data-from="0.27" data-to="0.5" id="s2">
+          <h1>Kerbs. Pavers.<br /><em>Precast</em> excellence.</h1>
+          <p>
+            Reliable infrastructure supplies built to withstand heavy industrial
+            traffic and extreme weathering.
+          </p>
+        </div>
+        <div class="stage top" data-from="0.54" data-to="0.78" id="s3">
+          <h1>From raw materials<br />to <em>finished strength.</em></h1>
+          <p>
+            Advanced vibrating compaction and rigorous quality testing under one
+            roof for uniform performance.
+          </p>
+        </div>
+        <div class="stage bottom" data-from="0.83" data-to="1.001" id="s4">
+          <h1 style="font-size: clamp(30px, 5.4vw, 72px)">Delivered.</h1>
+          <p style="max-width: 38ch">
+            Supplying robust precast products, boundary walls, and custom
+            solutions for commercial and municipal projects.
+          </p>
+          <a
+            href="#contact"
+            class="navcta"
+            style="
+              margin-top: 24px;
+              border-color: #f6f9fa;
+              color: #f6f9fa;
+              padding: 13px 26px;
+            "
+            >Get a Quote →</a
+          >
+        </div>
+
+        <div class="scrollcue" id="cue">
+          <span>Scroll to explore production</span>
+          <div class="mouse"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO ===================== -->
+    <section class="intro">
+      <div class="wrap introgrid">
+        <div class="reveal">
+          <span class="eyebrow">Manufacturers, not middlemen</span>
+          <p class="lead" style="margin-top: 18px">
+            Standard blocks break under pressure.
+            <b>We engineer them to last.</b>
+          </p>
+          <p class="sub">
+            Dhareshwer Cement Products is an industry leader in manufacturing
+            high-strength precast concrete infrastructure elements. From
+            heavy-duty kerb stones and interlocking paver blocks to compound
+            wall panels and concrete pipes, we control the entire production
+            pipeline. Our automated batching and strict curing processes ensure
+            every single product delivers ultimate structural integrity for your
+            site.
+          </p>
+        </div>
+        <div class="reveal">
+          <div class="stats">
+            <div class="stat">
+              <div class="n">500K+</div>
+              <div class="l">Sq ft of paver blocks<br />supplied annually</div>
+            </div>
+            <div class="stat">
+              <div class="n">25+</div>
+              <div class="l">Years of manufacturing<br />excellence</div>
+            </div>
+            <div class="stat">
+              <div class="n">M40+</div>
+              <div class="l">High-grade concrete<br />strength standard</div>
+            </div>
+            <div class="stat">
+              <div class="n">100%</div>
+              <div class="l">
+                Quality-tested &amp;<br />vibrated precast units
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CAPABILITIES ===================== -->
+    <section class="services" id="capabilities">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow">Our Products &amp; Services</span>
+            <h2 style="margin-top: 12px">
+              Engineered concrete<br />for modern infrastructure.
+            </h2>
+          </div>
+          <p style="max-width: 36ch; color: var(--graphite-2)">
+            Explore our comprehensive range of heavy-duty precast and molded
+            concrete products designed for municipal, industrial, and
+            residential applications.
+          </p>
+        </div>
+        <div class="cards">
+          <div class="card reveal">
+            <div class="card__img-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSgnnP3n2VuGBPmv2L7zknUBOqkeS95jTs-FAZ18Uf0mQN4icit7x9ZS190c5S3OuXJtxMm-wVfqFHaN4o"
+                alt="Concrete Kerb Stones"
+              />
+              <div class="ico">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 21h16M6 21V6l6-3 6 3v15M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="card__content">
+              <h3>Kerb Stones</h3>
+              <p>
+                Precision-molded concrete kerb stones designed for roadway
+                separation, landscaping, and urban traffic management with high
+                impact resistance.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__img-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQNsqqfBIQ2r-lb0jCat1oW-2UNPPJ46uCe0bkbDsIANnNwTZR7CwEzg-qZh7bExSdiWcXANCcP3UGkXhw"
+                alt="Precast Concrete Products"
+              />
+              <div class="ico">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M3 21h18M5 21V10h5v11M14 21V4h5v17M5 14h5M14 8h5M14 12h5M14 16h5"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="card__content">
+              <h3>Precast Concrete Products</h3>
+              <p>
+                Versatile precast elements engineered for rapid installation,
+                lowering on-site labor requirements while maximizing structural
+                load capacity.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__img-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTsjUfKLSF8AhzISCvBzV8MjknlT2u_zZPyNgcUJ2qGwxM9CHbhEvqbAFko6nWVmg6Dk_9f_rgvwDeyW1o"
+                alt="Compound Wall Panels"
+              />
+              <div class="ico">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 20l4-9 4 5 3-7 4 11M3 20h18M12 4v3M10 5.5h4" />
+                </svg>
+              </div>
+            </div>
+            <div class="card__content">
+              <h3>Compound Wall Panels</h3>
+              <p>
+                Modular precast boundary and compound wall panels that offer clean
+                aesthetics, fast assembly, and robust perimeter security.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__img-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTsjUfKLSF8AhzISCvBzV8MjknlT2u_zZPyNgcUJ2qGwxM9CHbhEvqbAFko6nWVmg6Dk_9f_rgvwDeyW1o"
+                alt="RCC Boundary Walls"
+              />
+              <div class="ico">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 3v18M3 12h18" />
+                </svg>
+              </div>
+            </div>
+            <div class="card__content">
+              <h3>RCC Boundary Walls</h3>
+              <p>
+                Reinforced cement concrete boundary wall systems built to
+                withstand high wind loads and harsh environmental conditions
+                indefinitely.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__img-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQjP-uphjIi8DCZzEqgo5jdFoWAsE1-eU9D7LsBeFNuoqZxY_LPBNdR0bSqIo7Sualf8ZM-mq6KFudkzto"
+                alt="Paver Blocks"
+              />
+              <div class="ico">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="7" height="7" />
+                  <rect x="14" y="3" width="7" height="7" />
+                  <rect x="3" y="14" width="7" height="7" />
+                  <rect x="14" y="14" width="7" height="7" />
+                </svg>
+              </div>
+            </div>
+            <div class="card__content">
+              <h3>Paver Blocks</h3>
+              <p>
+                High-density interlocking paver blocks available in various
+                thicknesses and patterns for heavy-duty driveways, pathways, and
+                industrial yards.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__img-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSAUDnV0a-XGhH7MXLPqy-Nbd2OGOS16tkPn_Y7WDQ9SKIzUwjdcovnGsYfOPgrXCSTnzIQfbVwgptBY6I"
+                alt="Concrete Pipes"
+              />
+              <div class="ico">
+                <svg viewBox="0 0 24 24">
+                  <ellipse cx="12" cy="6" rx="9" ry="3" />
+                  <path d="M3 6v12c0 1.66 4 3 9 3s9-1.34 9-3V6" />
+                </svg>
+              </div>
+            </div>
+            <div class="card__content">
+              <h3>Concrete Pipes</h3>
+              <p>
+                Heavy-duty reinforced concrete pipes manufactured for efficient
+                underground drainage, stormwater management, and sewage networks.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__img-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTwNYRhVRSYRfHSg7-Y8dJS8WNGRdPRJQmCGQbGt9U8ako81O7t99p6Rbx2iLUsMlWGNq9NhdSmbKJpuWg"
+                alt="Cover Blocks"
+              />
+              <div class="ico">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2l10 5-10 5L2 7l10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="card__content">
+              <h3>Cover Blocks</h3>
+              <p>
+                Precise concrete cover blocks designed to maintain correct steel
+                reinforcement spacing and concrete cover depth in structural
+                members.
+              </p>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card__img-wrap">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQNsqqfBIQ2r-lb0jCat1oW-2UNPPJ46uCe0bkbDsIANnNwTZR7CwEzg-qZh7bExSdiWcXANCcP3UGkXhw"
+                alt="Custom Concrete Products"
+              />
+              <div class="ico">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="card__content">
+              <h3>Custom Concrete Products</h3>
+              <p>
+                Bespoke precast manufacturing solutions tailored to match specific
+                architectural designs, unique dimensions, or heavy industrial
+                specifications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SPECS BAND ===================== -->
+    <section class="band">
+      <div class="bandgrid">
+        <div class="bandcell reveal">
+          <div class="n">M40<small>grade</small></div>
+          <div class="l">
+            High compressive strength mixes used across standard production
+            lines
+          </div>
+        </div>
+        <div class="bandcell reveal">
+          <div class="n">100%</div>
+          <div class="l">
+            Vibrated compaction ensuring maximum density and zero voids
+          </div>
+        </div>
+        <div class="bandcell reveal">
+          <div class="n">28<small>day</small></div>
+          <div class="l">
+            Rigorous wet-curing cycle for peak structural curing maturity
+          </div>
+        </div>
+        <div class="bandcell reveal">
+          <div class="n">25<small>yr</small></div>
+          <div class="l">
+            Trusted manufacturing partner for builders and municipalities
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="gallery" id="projects">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow">Product Showcases</span>
+            <h2
+              style="
+                margin-top: 12px;
+                font-size: clamp(30px, 4vw, 54px);
+                font-weight: 300;
+              "
+            >
+              Excellence visible in<br />every application.
+            </h2>
+          </div>
+        </div>
+        <div class="grid">
+          <figure class="a reveal">
+            <img
+              src="./g1.jpg"
+              alt="Heavy duty paver blocks installed on commercial driveway"
+            />
+            <figcaption>
+              <div class="t">Industrial Paver Installation</div>
+              <div class="m">High-load interlocking blocks · Logistics Hub</div>
+            </figcaption>
+          </figure>
+          <figure class="b reveal">
+            <img src="./g2.jpg" alt="Precast compound wall panels setup" />
+            <figcaption>
+              <div class="t">Precast Compound Wall</div>
+              <div class="m">
+                Modular boundary wall system · Industrial Estate
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="c reveal">
+            <img
+              src="./g3.jpg"
+              alt="Precision kerb stones aligned on roadway"
+            />
+            <figcaption>
+              <div class="t">Municipal Kerb Stones</div>
+              <div class="m">Heavy-duty roadside edging · Urban Expressway</div>
+            </figcaption>
+          </figure>
+          <figure class="d reveal">
+            <img
+              src="./g4.jpg"
+              alt="Reinforced concrete pipes stacked for drainage project"
+            />
+            <figcaption>
+              <div class="t">RCC Drainage Pipes</div>
+              <div class="m">Stormwater infrastructure · Municipal Project</div>
+            </figcaption>
+          </figure>
+          <figure class="e reveal">
+            <img
+              src="./g5.jpg"
+              alt="Custom precast concrete elements showcase"
+            />
+            <figcaption>
+              <div class="t">Custom Precast Solutions</div>
+              <div class="m">
+                Architectural and structural elements · Commercial Park
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== QUOTE ===================== -->
+    <section class="quote">
+      <div class="wrap reveal">
+        <span class="eyebrow" style="color: var(--accent-soft)"
+          >On the record</span
+        >
+        <blockquote>
+          "Dhareshwer Cement Products provided our township project with
+          thousands of paver blocks and kerbs without a single defective piece.
+          Their quality control sets the benchmark."
+        </blockquote>
+        <div class="who">
+          — Chief Project Engineer, Infrastructure Development Corp
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA / FORM ===================== -->
+    <section class="cta" id="contact">
+      <div class="wrap ctagrid">
+        <div class="reveal">
+          <span class="eyebrow">Get a Quote</span>
+          <h2 style="margin-top: 14px">Let's supply<br />your project.</h2>
+          <p class="sub">
+            Share your requirements — product type, quantity, and delivery
+            timeline. Our sales and logistics team will follow up promptly with
+            a competitive estimate.
+          </p>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"
+              />
+            </svg>
+            +91 99099 25000
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4z" />
+              <path d="M22 6l-10 7L2 6" />
+            </svg>
+            sales@dhareshwercement.com
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Vorakotda road opp. sub jail, GONDAL, Gujarat, India
+          </div>
+        </div>
+        <div class="reveal">
+          <form id="quoteForm">
+            <div class="two">
+              <div class="field">
+                <label>Name</label
+                ><input required name="name" placeholder="Jane Doe" />
+              </div>
+              <div class="field">
+                <label>Company</label
+                ><input
+                  required
+                  name="company"
+                  placeholder="Contractor / Builder"
+                />
+              </div>
+            </div>
+            <div class="two">
+              <div class="field">
+                <label>Email</label
+                ><input
+                  required
+                  type="email"
+                  name="email"
+                  placeholder="jane@company.com"
+                />
+              </div>
+              <div class="field">
+                <label>Phone</label
+                ><input name="phone" placeholder="+91 99099 25000" />
+              </div>
+            </div>
+            <div class="two">
+              <div class="field">
+                <label>Product Requirement</label>
+                <select name="type">
+                  <option>Kerb Stones</option>
+                  <option>Precast Concrete Products</option>
+                  <option>Compound Wall Panels</option>
+                  <option>RCC Boundary Walls</option>
+                  <option>Paver Blocks</option>
+                  <option>Concrete Pipes</option>
+                  <option>Cover Blocks</option>
+                  <option>Custom Concrete Products</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Approx. Quantity / Scope</label>
+                <select name="size">
+                  <option>Small batch / Trial order</option>
+                  <option>Medium project supply</option>
+                  <option>Large commercial bulk supply</option>
+                  <option>Long-term municipal contract</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label>Project details</label
+              ><textarea
+                name="notes"
+                placeholder="Delivery location, required specifications, target schedule…"
+              ></textarea>
+            </div>
+            <button class="submit" type="submit">Submit Request</button>
+            <p class="formnote">We reply within one business day.</p>
+          </form>
+          <div class="sent" id="sent">
+            <div class="check">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
+            </div>
+            <h3 style="font-weight: 500">Thanks — request received.</h3>
+            <p style="color: var(--graphite-2); margin-top: 6px">
+              A Dhareshwer Cement Products sales specialist will be in touch
+              shortly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+      <div class="wrap foot">
+        <div style="max-width: 320px">
+          <div class="brand">
+            <span class="mark"></span>Dhareshwer Cement Products
+          </div>
+          <p style="font-size: 14px">
+            Leading manufacturer of high-strength precast concrete products,
+            paving blocks, and boundary wall systems built for uncompromising
+            durability.
+          </p>
+          <div style="margin-top: 15px; display: flex; gap: 15px;">
+            <a href="https://facebook.com/trishulmanufacturer" target="_blank" rel="noopener noreferrer">Facebook (@trishulmanufacturer)</a>
+            <a href="https://instagram.com/trishulmanufacturer" target="_blank" rel="noopener noreferrer">Instagram (@trishulmanufacturer)</a>
+          </div>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <a href="#capabilities">Kerb Stones</a>
+          <a href="#capabilities">Precast Products</a>
+          <a href="#capabilities">Compound Wall Panels</a>
+          <a href="#capabilities">Paver Blocks</a>
+          <a href="#capabilities">Concrete Pipes</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#projects">Product Showcases</a>
+          <a href="#contact">Get a Quote</a>
+          <a href="#contact">Careers</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+919909925000">+91 99099 25000</a>
+          <a href="mailto:sales@dhareshwercement.com">sales@dhareshwercement.com</a>
+          <a href="#contact">Vorakotda road opp. sub jail, Gondal</a>
+        </div>
+      </div>
+      <div class="wrap legal">
+        <span
+          >© 2026 Dhareshwer Cement Products · Quality Certified · ISO
+          9001:2015</span
+        >
+      </div>
+    </footer>
+
+    <!-- GSAP Core Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Floating Actions Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          // Apply magnetic effect only on desktop screens (>= 768px)
+          if (window.innerWidth >= 768) {
+              document.querySelectorAll('.magnetic-btn').forEach((btn) => {
+                  const xTo = gsap.quickTo(btn, 'x', { duration: 0.4, ease: 'power3.out' });
+                  const yTo = gsap.quickTo(btn, 'y', { duration: 0.4, ease: 'power3.out' });
+
+                  btn.addEventListener('mousemove', (e) => {
+                      const rect = btn.getBoundingClientRect();
+                      xTo((e.clientX - rect.left - rect.width / 2) * 0.3);
+                      yTo((e.clientY - rect.top - rect.height / 2) * 0.3);
+                  });
+
+                  btn.addEventListener('mouseleave', () => {
+                      xTo(0);
+                      yTo(0);
+                  });
+              });
+          }
+      });
+    </script>
+
+    <script>
+      // -------- PRELOADER: fully download the hero video, then reveal --------
+      const video = document.getElementById("build");
+      const loader = document.getElementById("loader");
+      const loaderBar = document.getElementById("loaderBar");
+      const loaderLabel = document.getElementById("loaderLabel");
+
+      const isMobileHero = window.matchMedia("(max-width:640px)").matches;
+      const SRC = isMobileHero ? "./hero_mobile.mp4" : "./hero.mp4";
+      if (isMobileHero)
+        video.setAttribute("poster", "assets/poster_mobile.jpg");
+
+      let loaderDone = false;
+      function finishLoader() {
+        if (loaderDone) return;
+        loaderDone = true;
+        setLoadProgress(1);
+        document.body.classList.remove("is-loading");
+        if (loader) {
+          loader.classList.add("is-done");
+          setTimeout(() => {
+            if (loader.parentNode) loader.parentNode.removeChild(loader);
+          }, 900);
+        }
+      }
+      function setLoadProgress(p) {
+        if (loaderBar) loaderBar.style.width = (p * 100).toFixed(1) + "%";
+        if (loaderLabel)
+          loaderLabel.textContent = "Loading — " + Math.round(p * 100) + "%";
+      }
+      function attachDirect(url) {
+        video.src = url;
+        video.load();
+      }
+      function whenPlayable() {
+        if (video.readyState >= 2) return finishLoader();
+        video.addEventListener("loadeddata", finishLoader, { once: true });
+        setTimeout(finishLoader, 15000);
+      }
+      function preloadVideo(url, onFail) {
+        if (
+          !window.fetch ||
+          !window.ReadableStream ||
+          !window.Blob ||
+          !URL.createObjectURL
+        ) {
+          attachDirect(url);
+          whenPlayable();
+          return;
+        }
+        fetch(url)
+          .then((res) => {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            const total = parseInt(
+              res.headers.get("Content-Length") || "0",
+              10,
+            );
+            if (!res.body || !total) return res.blob();
+            const reader = res.body.getReader();
+            const chunks = [];
+            let got = 0;
+            function pump() {
+              return reader.read().then((r) => {
+                if (r.done) return new Blob(chunks, { type: "video/mp4" });
+                chunks.push(r.value);
+                got += r.value.length;
+                setLoadProgress(Math.min(got / total, 1));
+                return pump();
+              });
+            }
+            return pump();
+          })
+          .then((blob) => {
+            video.src = URL.createObjectURL(blob);
+            video.load();
+            whenPlayable();
+          })
+          .catch(() => {
+            if (onFail) onFail();
+            else {
+              attachDirect(url);
+              whenPlayable();
+            }
+          });
+      }
+      preloadVideo(SRC, () => {
+        attachDirect(SRC);
+        whenPlayable();
+      });
+
+      // -------- SCRUB ENGINE --------
+      const nav = document.getElementById("nav");
+      const hero = document.getElementById("hero");
+      const stages = [...document.querySelectorAll(".stage")];
+      const pbar = document.getElementById("pbar");
+      const cue = document.getElementById("cue");
+
+      let duration = 0;
+      let targetTime = 0;
+      let displayTime = 0;
+      let lastSought = -1;
+
+      video.addEventListener("loadedmetadata", () => {
+        duration = video.duration || 10;
+      });
+      video.addEventListener("canplay", () => {
+        try {
+          video.pause();
+        } catch (e) {}
+      });
+
+      function clamp(v, a, b) {
+        return Math.max(a, Math.min(b, v));
+      }
+
+      function onScroll() {
+        const rect = hero.getBoundingClientRect();
+        const scrollable = hero.offsetHeight - window.innerHeight;
+        const progress = clamp(-rect.top / scrollable, 0, 1);
+
+        const dur =
+          isFinite(video.duration) && video.duration > 0
+            ? video.duration
+            : duration;
+        if (dur) {
+          targetTime = clamp(progress * (dur - 0.04), 0, dur);
+        }
+
+        pbar.style.width = (progress * 100).toFixed(2) + "%";
+
+        for (const s of stages) {
+          const f = parseFloat(s.dataset.from),
+            t = parseFloat(s.dataset.to);
+          s.classList.toggle("show", progress >= f && progress < t);
+        }
+        cue.style.opacity = progress > 0.04 ? "0" : "0.9";
+
+        nav.classList.toggle("solid", rect.bottom < window.innerHeight * 0.6);
+      }
+
+      let ticking = false;
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              onScroll();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        },
+        { passive: true },
+      );
+      window.addEventListener("resize", onScroll);
+
+      let primed = false,
+        primeAt = 0;
+      function prime() {
+        if (primed) return;
+        primed = true;
+        primeAt = performance.now();
+        const stop = () => {
+          try {
+            video.pause();
+          } catch (e) {}
+        };
+        const stopAfterFrame = () => {
+          if (video.requestVideoFrameCallback)
+            video.requestVideoFrameCallback(() => stop());
+          else setTimeout(stop, 120);
+        };
+        const p = video.play();
+        if (p && p.then) {
+          p.then(stopAfterFrame).catch(() => {
+            primed = false;
+          });
+        } else stopAfterFrame();
+        setTimeout(stop, 300);
+      }
+      ["touchstart", "touchmove", "wheel", "pointerdown", "keydown"].forEach(
+        (ev) => {
+          window.addEventListener(ev, prime, { passive: true });
+        },
+      );
+      video.addEventListener("loadeddata", prime, { once: true });
+      onScroll();
+
+      (function engine() {
+        const dur =
+          isFinite(video.duration) && video.duration > 0
+            ? video.duration
+            : duration;
+        if (dur) {
+          displayTime += (targetTime - displayTime) * 0.22;
+          if (Math.abs(targetTime - displayTime) < 0.003)
+            displayTime = targetTime;
+          if (
+            Math.abs(displayTime - lastSought) > 0.006 &&
+            video.readyState >= 2
+          ) {
+            try {
+              video.currentTime = displayTime;
+              lastSought = displayTime;
+            } catch (e) {}
+          }
+        }
+        if (!video.paused && (!primeAt || performance.now() - primeAt > 350)) {
+          try {
+            video.pause();
+          } catch (e) {}
+        }
+        requestAnimationFrame(engine);
+      })();
+
+      // -------- REVEAL ON SCROLL --------
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.16 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+      // -------- FORM --------
+      document.getElementById("quoteForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        document.getElementById("quoteForm").style.display = "none";
+        document.getElementById("sent").classList.add("show");
+      });
+    </script>
+  </body>
+</html>
